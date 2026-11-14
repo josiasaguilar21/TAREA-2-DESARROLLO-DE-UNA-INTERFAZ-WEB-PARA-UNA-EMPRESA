@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de clientes | NOVATECH</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <a class="logotipo" href="index.html">
+      <img src="img/logo.png" alt="Logotipo de NOVATECH" width="205" height="50">
+    </a>
+  </header>
+
+  <nav class="menu" aria-label="Menú principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#productos">Productos</a></li>
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="registro.html">Registro de clientes</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section class="portada portada-formulario">
+      <h1>Registro de clientes</h1>
+      <p class="lema">Completa tus datos y recibe promociones y servicios personalizados</p>
+    </section>
+
+    <form class="formulario" action="#" method="post" enctype="multipart/form-data">
+
+      <fieldset>
+        <legend>Datos personales</legend>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="cedula">Cédula <span class="obligatorio">*</span></label>
+            <input type="text" id="cedula" name="cedula"
+                   required minlength="10" maxlength="10"
+                   pattern="[0-9]{10}" inputmode="numeric"
+                   title="La cédula debe tener exactamente 10 dígitos"
+                   placeholder="0912345678">
+          </div>
+        </div>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="nombres">Nombres <span class="obligatorio">*</span></label>
+            <input type="text" id="nombres" name="nombres"
+                   required minlength="3" maxlength="40"
+                   pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{3,40}"
+                   title="Solo letras, entre 3 y 40 caracteres"
+                   placeholder="Ej.: María José">
+          </div>
+
+          <div class="campo">
+            <label for="apellidos">Apellidos <span class="obligatorio">*</span></label>
+            <input type="text" id="apellidos" name="apellidos"
+                   required minlength="3" maxlength="40"
+                   pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{3,40}"
+                   title="Solo letras, entre 3 y 40 caracteres"
+                   placeholder="Ej.: Pérez Mora">
+          </div>
+        </div>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="nacimiento">Fecha de nacimiento <span class="obligatorio">*</span></label>
+            <input type="date" id="nacimiento" name="nacimiento"
+                   required min="1926-01-01" max="2008-12-31">
+          </div>
+
+          <div class="campo">
+            <label for="edad">Edad <span class="obligatorio">*</span></label>
+            <input type="number" id="edad" name="edad"
+                   required min="18" max="100" placeholder="Entre 18 y 100">
+          </div>
+        </div>
+
+        <div class="campo">
+          <span class="grupo-titulo">Género <span class="obligatorio">*</span></span>
+          <div class="opciones">
+            <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
+            <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+            <label><input type="radio" name="genero" value="otro"> Otro</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos de contacto</legend>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="correo">Correo electrónico <span class="obligatorio">*</span></label>
+            <input type="email" id="correo" name="correo"
+                   required maxlength="60" placeholder="usuario@correo.com">
+          </div>
+
+          <div class="campo">
+            <label for="telefono">Teléfono <span class="obligatorio">*</span></label>
+            <input type="tel" id="telefono" name="telefono"
+                   required pattern="[0-9]{9,10}"
+                   title="Solo números, 9 o 10 dígitos"
+                   placeholder="0991234567">
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="direccion">Dirección <span class="obligatorio">*</span></label>
+          <textarea id="direccion" name="direccion" rows="3"
+                    required minlength="10" maxlength="120"
+                    placeholder="Calle principal, calle secundaria y referencia"></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="ciudad">Ciudad <span class="obligatorio">*</span></label>
+          <select id="ciudad" name="ciudad" required>
+            <option value="" selected disabled>-- Seleccione una ciudad --</option>
+            <option value="guayaquil">Guayaquil</option>
+            <option value="quito">Quito</option>
+            <option value="cuenca">Cuenca</option>
+            <option value="manta">Manta</option>
+            <option value="ambato">Ambato</option>
+            <option value="loja">Loja</option>
+            <option value="otra">Otra</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferencias del cliente</legend>
+
+        <div class="campo">
+          <span class="grupo-titulo">Productos de interés</span>
+          <div class="opciones">
+            <label><input type="checkbox" name="productos" value="computadoras"> Computadoras</label>
+            <label><input type="checkbox" name="productos" value="impresoras"> Impresoras</label>
+            <label><input type="checkbox" name="productos" value="accesorios"> Accesorios</label>
+            <label><input type="checkbox" name="productos" value="celulares"> Celulares</label>
+          </div>
+        </div>
+
+        <div class="campo">
+          <span class="grupo-titulo">Servicios de interés</span>
+          <div class="opciones">
+            <label><input type="checkbox" name="servicios" value="mantenimiento"> Mantenimiento</label>
+            <label><input type="checkbox" name="servicios" value="reparacion"> Reparación</label>
+            <label><input type="checkbox" name="servicios" value="soporte"> Soporte técnico</label>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="foto">Fotografía del cliente (opcional)</label>
+          <input type="file" id="foto" name="foto" accept="image/*">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Confirmación</legend>
+
+        <div class="campo">
+          <label class="terminos">
+            <input type="checkbox" name="terminos" required>
+            Acepto los términos y condiciones <span class="obligatorio">*</span>
+          </label>
+        </div>
+
+        <div class="acciones">
+          <button type="submit" class="boton boton-registrar">Registrar</button>
+          <button type="reset" class="boton boton-limpiar">Limpiar</button>
+        </div>
+      </fieldset>
+
+    </form>
+
+    <p class="nota">Los campos marcados con <span class="obligatorio">*</span> son obligatorios.</p>
+
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 NOVATECH. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
